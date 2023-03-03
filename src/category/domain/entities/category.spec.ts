@@ -2,8 +2,20 @@ import Category from "./category";
 
 describe("Category Unit tests", () => {
   test("constructor of category", () => {
-    const category: Category = new Category("Movie");
+    const created_at = new Date();
 
-    expect(category.name).toBe("Movie");
+    const category: Category = new Category({
+      name: "Movie",
+      description: "some description",
+      is_active: true,
+      created_at: created_at,
+    });
+
+    expect(category.props).toStrictEqual({
+      name: "Movie",
+      description: "some description",
+      is_active: true,
+      created_at: created_at,
+    });
   });
 });
