@@ -9,7 +9,7 @@ expect.extend({
         if (isValid) {
             return {
                 pass: false,
-                message: () => "The data is valida"
+                message: () => "The data is valid"
             }
         }
         const isMatch = expect.objectContaining(received).asymmetricMatch(validator.errors)
